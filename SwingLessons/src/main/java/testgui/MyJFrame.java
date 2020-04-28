@@ -11,7 +11,7 @@ public class MyJFrame extends JFrame {
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         super.setVisible(true);
         super.setLayout(new FlowLayout());
-        super.setLocationRelativeTo(null);
+
 
     }
 }
