@@ -1,9 +1,13 @@
 package guicalculator;
 
 
+import listeners.ButtonListener;
+
 import javax.swing.*;
 import javax.swing.plaf.metal.MetalLookAndFeel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class TestGUI {
@@ -65,6 +69,13 @@ public class TestGUI {
 
     private void createButtons () {
         plus = new MyJButton("+", 100, 100);
+//        plus.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed (ActionEvent e) {
+//                JOptionPane.showMessageDialog(paneleTwo, "r33t3t3t33t");
+//            }
+//        });
+        plus.addActionListener(new ButtonListener(paneleTwo));
         minus = new MyJButton("-");
         multiply = new MyJButton("*");
         divide = new MyJButton("/");
@@ -101,7 +112,7 @@ public class TestGUI {
 
     private void createFrame () {
         frame = new MyJFrame("Calcularor", 700, 300, new BorderLayout(2, 2));
-     //   frame = new MyJDialog("Calcularor", 700, 300, new BorderLayout(2, 2));
+        //   frame = new MyJDialog("Calcularor", 700, 300, new BorderLayout(2, 2));
         frame.setMinimumSize(new Dimension(700, 300));
         frame.setResizable(false);
         frame.getContentPane().add(paneleOne, BorderLayout.NORTH);
@@ -112,4 +123,13 @@ public class TestGUI {
     }
 
 
+//    class ButtonListener implements ActionListener {
+//
+//        @Override
+//        public void actionPerformed (ActionEvent e) {
+//
+//            JOptionPane.showMessageDialog(paneleTwo, "r33t3t3t33t");
+//
+//        }
+//    }
 }
