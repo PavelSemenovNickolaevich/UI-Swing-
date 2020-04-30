@@ -25,8 +25,8 @@ public class TestGUI {
     private MyJPanel paneleTwo;
     private MyJPanel paneleThree;
 
+    //private MyJDialog frame;
     private MyJFrame frame;
-
 
 
     public static void main (String[] args) {
@@ -45,15 +45,6 @@ public class TestGUI {
         testGUI.createFrame();
 
 
-
-
-
-
-
-
-
-
-
         //frame.setIconImage(new ImageIcon("C:\\Users\\natit\\Desktop\\pictures\\terminator.png").getImage());
     }
 
@@ -67,11 +58,13 @@ public class TestGUI {
         numInOne = new MyJTextField(10);
         numInTwo = new MyJTextField(10);
         resultOut = new MyJTextField(20);
+        resultOut.setEditable(false);
+        resultOut.setFocusable(false);
 
     }
 
     private void createButtons () {
-        plus = new MyJButton("+", 100,100);
+        plus = new MyJButton("+", 100, 100);
         minus = new MyJButton("-");
         multiply = new MyJButton("*");
         divide = new MyJButton("/");
@@ -80,7 +73,7 @@ public class TestGUI {
 
     private void createPanel () {
         paneleOne = new MyJPanel("firstPanel", 100, 100);
-        paneleOne.setPreferredSize(new Dimension( 200, 60));
+        paneleOne.setPreferredSize(new Dimension(200, 60));
         paneleOne.setLayout(new FlowLayout(FlowLayout.LEFT, 50, 20));
 
         paneleOne.add(num1);
@@ -89,33 +82,31 @@ public class TestGUI {
         paneleOne.add(numInTwo);
 
 
-
-
-
         paneleTwo = new MyJPanel("secondPanel", 100, 100);
-        paneleTwo.setPreferredSize(new Dimension( 200, 50));
-        paneleTwo.setLayout(new FlowLayout(FlowLayout.LEFT,100 ,50));
+        paneleTwo.setPreferredSize(new Dimension(200, 50));
+        paneleTwo.setLayout(new FlowLayout(FlowLayout.LEFT, 100, 50));
         paneleTwo.add(minus);
         paneleTwo.add(plus);
         paneleTwo.add(multiply);
         paneleTwo.add(divide);
 
 
-
         paneleThree = new MyJPanel("thirdPanel", 100, 100);
-        paneleThree.setPreferredSize(new Dimension( 200, 50));
+        paneleThree.setPreferredSize(new Dimension(200, 50));
         paneleThree.setLayout(new FlowLayout(FlowLayout.LEFT, 100, 10));
         paneleThree.add(result);
         paneleThree.add(resultOut);
 
     }
 
-    private void createFrame() {
-        frame = new MyJFrame("Calcularor", 700, 300, new BorderLayout(2,2));
+    private void createFrame () {
+        frame = new MyJFrame("Calcularor", 700, 300, new BorderLayout(2, 2));
+     //   frame = new MyJDialog("Calcularor", 700, 300, new BorderLayout(2, 2));
         frame.setMinimumSize(new Dimension(700, 300));
-        frame.getContentPane().add(paneleOne,BorderLayout.NORTH);
-        frame.getContentPane().add(paneleTwo,BorderLayout.CENTER);
-        frame.getContentPane().add(paneleThree,BorderLayout.SOUTH);
+        frame.setResizable(false);
+        frame.getContentPane().add(paneleOne, BorderLayout.NORTH);
+        frame.getContentPane().add(paneleTwo, BorderLayout.CENTER);
+        frame.getContentPane().add(paneleThree, BorderLayout.SOUTH);
 
         frame.setVisible(true);
     }
