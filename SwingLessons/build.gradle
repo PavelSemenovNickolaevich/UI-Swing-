@@ -12,5 +12,20 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'org.testng:testng:7.1.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation 'org.hamcrest:java-hamcrest:2.0.0.0'
+    implementation 'com.beust:jcommander:1.78'
+    implementation 'com.thoughtworks.xstream:xstream:1.4.11.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.10.Final'
+    compile 'ch.qos.logback:logback-classic:1.1.5'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
+    implementation 'commons-net:commons-net:3.6'
+    implementation 'com.joyent.http-signature:apache-http-client-signature:4.1.1'
+    implementation 'com.joyent.http-signature:java-http-signature:4.1.1'
+    implementation 'org.subethamail:subethasmtp:3.1.7'
+    implementation 'ru.lanwen.verbalregex:java-verbal-expressions:1.6'
+    implementation 'biz.futureware.mantis:mantis-axis-soap-client:1.2.19'
+    implementation 'com.jayway.restassured:dist-rest-assured:2.2.0'
 }
