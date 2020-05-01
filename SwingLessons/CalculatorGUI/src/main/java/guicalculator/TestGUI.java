@@ -1,13 +1,12 @@
 package guicalculator;
 
 
-import listeners.ButtonListener;
+import listeners.CalcTextFocusListener;
+import listeners.CalculateButtonListener;
 
 import javax.swing.*;
 import javax.swing.plaf.metal.MetalLookAndFeel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class TestGUI {
@@ -59,11 +58,12 @@ public class TestGUI {
     }
 
     private void createTextField () {
-        numInOne = new MyJTextField(10);
-        numInTwo = new MyJTextField(10);
+        numInOne = new MyJTextField(10, "Input chislo");
+        numInTwo = new MyJTextField(10, "Input chislo");
         resultOut = new MyJTextField(20);
         resultOut.setEditable(false);
-        resultOut.setFocusable(false);
+        //  resultOut.setFocusable(false);
+        addTextFieldListeners();
 
     }
 
@@ -75,10 +75,10 @@ public class TestGUI {
 //                JOptionPane.showMessageDialog(paneleTwo, "r33t3t3t33t");
 //            }
 //        });
-        plus.addActionListener(new ButtonListener(paneleTwo));
         minus = new MyJButton("-");
         multiply = new MyJButton("*");
         divide = new MyJButton("/");
+        addButtonListeners();
     }
 
 
@@ -120,6 +120,20 @@ public class TestGUI {
         frame.getContentPane().add(paneleThree, BorderLayout.SOUTH);
 
         frame.setVisible(true);
+    }
+
+    public void addButtonListeners () {
+        CalculateButtonListener bl = new CalculateButtonListener(numInOne, numInTwo, resultOut);
+        plus.addActionListener(bl);
+        minus.addActionListener(bl);
+        multiply.addActionListener(bl);
+        divide.addActionListener(bl);
+    }
+
+    public void addTextFieldListeners() {
+        numInTwo.addFocusListener(new CalcTextFocusListener(numInTwo));
+        numInOne.addFocusListener(new CalcTextFocusListener(numInOne));
+
     }
 
 
