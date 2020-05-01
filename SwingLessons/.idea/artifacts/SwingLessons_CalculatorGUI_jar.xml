@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SwingLessons.CalculatorGUI:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SwingLessons_CalculatorGUI_jar</output-path>
+    <root id="archive" name="SwingLessons.CalculatorGUI.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/CalculatorGUI/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

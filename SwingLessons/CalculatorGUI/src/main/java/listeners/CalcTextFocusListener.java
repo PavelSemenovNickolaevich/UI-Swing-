@@ -19,7 +19,7 @@ public class CalcTextFocusListener implements FocusListener {
 
     @Override
     public void focusGained (FocusEvent e) {
-        if (field.getText().equals("Input chislo")) {
+        if (field.getText().trim().equals("Input chislo")) {
             field.setText("");
             field.setForeground(Color.GRAY);
         }
